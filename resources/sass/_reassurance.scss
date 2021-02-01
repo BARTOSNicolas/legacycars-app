@@ -1,0 +1,21 @@
+.reassurance{
+    background-color: $lc-primary;
+    height: 180px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    .logo{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        svg{
+            margin-bottom: 16px;
+        }
+        p{
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+
+}

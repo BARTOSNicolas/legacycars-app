@@ -17,6 +17,9 @@ Route::get('/', 'App\Http\Controllers\HomeController@view');
 
 Route::get('/product', 'App\Http\Controllers\ProductController@product_list');
 
+Route::get('/sale', 'App\Http\Controllers\ProductController@product_sell');
+
 Route::get('/product/{id}', 'App\Http\Controllers\ProductController@product_details');
 
 Route::get('/cart', 'App\Http\Controllers\CartController@view');
+

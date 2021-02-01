@@ -14,4 +14,7 @@ class ProductController extends Controller
         $id = request('id');
         return view('product-details');
     }
+    public function product_sell(){
+        return view('product-sell');
+    }
 }

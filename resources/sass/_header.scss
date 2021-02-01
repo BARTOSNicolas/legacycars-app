@@ -1,0 +1,38 @@
+.navbar{
+    z-index: 99;
+    background-color: $lc-black;
+    font-size: 16px;
+    .navbar-collapse{
+        text-align: right;
+    }
+    @keyframes linkHover {
+        0%{width: 0;}
+        100%{width: 100%;}
+    }
+    .nav-item{
+        .nav-link{
+            position: relative;
+            color: $lc-primary;
+        }
+        &:hover{
+            .nav-link{
+                color: $lc-secondary;
+            }
+            .nav-link::after{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                content: "";
+                width: 0%;
+                height: 1px;
+                background-color: $lc-secondary;
+                animation: linkHover 500ms forwards;
+            }
+        }
+        &.active{
+            .nav-link{
+                color: $lc-secondary;
+            }
+        }
+    }
+}

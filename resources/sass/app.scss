@@ -1,0 +1,78 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Orbitron:wght@400;700;900&display=swap');
+
+// Variables
+@import 'variables';
+
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//HomePage
+@import 'homepage';
+@import "vendre";
+
+@import "header";
+@import "reassurance";
+@import "footer";
+
+//Modification Buttons
+.btn-lc{
+    padding: 8px;
+    position: relative;
+    border: 1px solid $lc-primary;
+    color: $lc-primary;
+    transform: skewX(-15deg);
+    span{
+        display: block;
+        transform: skewX(15deg);
+    }
+    &::after{
+        z-index: -1;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 100%;
+        bottom: 0;
+        background-color: $lc-primary;
+        transition: 500ms;
+    }
+    &:hover{
+        color: $lc-white;
+        &::after{
+            right: 0;
+        }
+    }
+}
+
+//Image title
+section.title{
+    height: 600px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    .container{
+        position: relative;
+        height: 600px;
+        .page-title{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 48px;
+            color: $lc-primary
+        }
+    }
+}
+
+section.content{
+    margin-bottom: 100px;
+    .subtilte{
+        font-size: 16px;
+        font-weight: bold;
+        color: $lc-primary;
+    }
+    p{
+        color: $lc-white;
+    }
+}
+

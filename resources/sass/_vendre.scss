@@ -5,7 +5,7 @@
     .input-lc{
         margin-bottom: 4px;
         border: 1px solid $lc-primary;
-        background-color: $lc-black;
+        background-color: $lc-grey;
         color: $lc-white;
         min-height: 40px;
         transform: skewX(15deg);
@@ -13,10 +13,10 @@
         &::placeholder{
             color: #740000;
         }
-        &:focus::placeholder{
+        &:focus::placeholder, &:hover::placeholder{
             color: $lc-secondary;
         }
-        &:focus{
+        &:focus, &:hover{
             border: 1px solid $lc-secondary;
         }
         &.return{
@@ -26,24 +26,33 @@
     }
 
     .img-container{
-        overflow: hidden;
         position: relative;
         border: 1px solid $lc-primary;
-        img{
-            width: 100%;
+        .overflow{
+            overflow: hidden;
+            img{
+                width: 100%;
+            }
         }
         .close-icon{
             position: absolute;
-            top: 8px;
-            right: 8px;
-            height: 36px;
-            width: 36px;
-            background-color: $lc-primary;
+            top: -12px;
+            right: -12px;
+            height: 24px;
+            width: 24px;
+            background-color: $lc-black;
             border-radius: 50%;
-            color: $lc-black;
+            color: $lc-primary;
+            text-align: center;
+            line-height: 18px;
+            border: solid 1px $lc-primary;
+            &:hover{
+                border-color: $lc-secondary;
+                color: $lc-secondary;
+            }
             svg{
-                width: 24px;
-                height: 24px;
+                width: 18px;
+                height: 18px;
             }
         }
     }

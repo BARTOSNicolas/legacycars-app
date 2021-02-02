@@ -12,7 +12,7 @@ class ProductController extends Controller
 
     public function product_details(){
         $id = request('id');
-        return view('product-details');
+        return view('product-details', ['id' => $id]);
     }
     public function product_sell(){
         return view('product-sell');

@@ -17,7 +17,8 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel porta magna. Aliquam ut eleifend ipsum. Proin lacus erat, sodales ut finibus vitae, convallis ac ligula. Vivamus quis risus vestibulum, lacinia orci vel, lacinia tellus. Ut nec dolor sed nisi.</p>
             </div>
             <div class="col-sm-4">
-                <form action="/sale" method="POST">
+                <form action="{{ route('validation') }}" method="POST">
+                    {{ csrf_field() }}
                     <h2 class="subtilte">Vendeur</h2>
                     <div class=" d-flex mb-5 flex-column">
                         <input type="text" class="form-control mb-2 input-lc" placeholder="Votre prénom" name="first_name">
@@ -35,6 +36,7 @@
                         <input class="form-control mb-2 input-lc return" type="file" id="photoMultiple" multiple>
                         <textarea class="form-control input-lc ml-2 mb-2" id="message" name="message" rows="4" placeholder="Description"></textarea>
                     </div>
+                    <button type="submit" class="btn btn-lc w-100 ml-3">Envoyer</button>
                 </form>
             </div>
             <div class="col-sm-4">
@@ -57,4 +59,7 @@
             </div>
         </div>
     </section>
+    @if(Request::isMethod('post'))
+        <p>{{$form['first_name']}}, {{$form['last_name']}}, {{$form['mail']}}, {{$form['phone']}}, {{$form['marque']}}, {{$form['modele']}}, {{$form['annee']}}, {{$form['kilometrage']}}, {{$form['prix']}}, </p>
+    @endif
 @endsection

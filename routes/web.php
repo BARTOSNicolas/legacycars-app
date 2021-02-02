@@ -15,13 +15,14 @@ use App\Http\Controllers\CartController;
 |
 */
 
-Route::get('/', [HomeController::class, 'view']);
+Route::get('/', [HomeController::class, 'view'])->name('home');
 
-Route::get('/product', [ProductController::class, 'product_list']);
+Route::get('/product', [ProductController::class, 'product_list'])->name('produits');
 
-Route::get('/sale', [ProductController::class, 'product_sell']);
+Route::get('/sale', [ProductController::class, 'product_sell'])->name('formulaire');
+Route::post('/sale', [ProductController::class, 'store'])->name('validation');
 
 Route::get('/product/{id}', [ProductController::class, 'product_details']);
 
-Route::get('/cart', [CartController::class, 'view']);
+Route::get('/cart', [CartController::class, 'view'])->name('panier');
 

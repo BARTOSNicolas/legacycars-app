@@ -17,7 +17,9 @@ use App\Http\Controllers\CartController;
 
 Route::get('/', [HomeController::class, 'view'])->name('home');
 
-Route::get('/product', [ProductController::class, 'product_list'])->name('produits');
+Route::get('/products', [ProductController::class, 'product_list'])->name('produits');
+Route::get('/products/sortByName', [ProductController::class, 'product_list_sortByName'])->name('produitsByName');
+Route::get('/products/sortByPrice', [ProductController::class, 'product_list_sortByPrice'])->name('produitsByPrice');
 
 Route::get('/sale', [ProductController::class, 'create'])->name('formulaire');
 Route::post('/sale', [ProductController::class, 'store'])->name('validation');

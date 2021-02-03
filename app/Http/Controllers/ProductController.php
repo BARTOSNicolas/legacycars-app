@@ -4,16 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
     public function product_list(){
-        $products = DB::select('SELECT * FROM products');
+        //$products = DB::select('SELECT * FROM products');
+        $products = Product::all();
+        return view('product-list', ['products'=>$products]);
+    }
+    public function product_list_sortByName(){
+        //$products = DB::select('SELECT * FROM products');
+        $products = Product::all()->sortBy('name');
+        return view('product-list', ['products'=>$products]);
+    }
+    public function product_list_sortByPrice(){
+        //$products = DB::select('SELECT * FROM products');
+        $products = Product::all()->sortBy('price');
         return view('product-list', ['products'=>$products]);
     }
 
     public function product_details($id){
-        $product = DB::select('SELECT * FROM products WHERE id=?', [$id]);
+       //$product = DB::select('SELECT * FROM products WHERE id=?', [$id]);
+        $product = Product::all()->where('id', $id);
         return view('product-details', ['id' => $id, 'product' => $product]);
     }
     public function create(){

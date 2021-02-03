@@ -49,6 +49,29 @@
     }
 }
 
+.input-lc{
+    margin-bottom: 4px;
+    border: 1px solid $lc-primary;
+    background-color: $lc-grey;
+    color: $lc-white;
+    min-height: 40px;
+    transform: skewX(15deg);
+    font-style: italic;
+    &::placeholder{
+        color: #740000;
+    }
+    &:focus::placeholder, &:hover::placeholder{
+        color: $lc-secondary;
+    }
+    &:focus, &:hover{
+        border: 1px solid $lc-secondary;
+    }
+    &.return{
+        transform: skewX(-15deg);
+        font-style: normal;
+    }
+}
+
 //Image title
 section.title{
     height: 600px;

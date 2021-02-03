@@ -10054,40 +10054,6 @@ h1 {
   background-image: url(/images/vendre-background.jpg?1349989939a9b781844e306ee9791b13);
 }
 
-.content.sale .input-lc {
-  margin-bottom: 4px;
-  border: 1px solid #C00000;
-  background-color: #090909;
-  color: #ffffff;
-  min-height: 40px;
-  transform: skewX(15deg);
-  font-style: italic;
-}
-.content.sale .input-lc::-moz-placeholder {
-  color: #740000;
-}
-.content.sale .input-lc:-ms-input-placeholder {
-  color: #740000;
-}
-.content.sale .input-lc::placeholder {
-  color: #740000;
-}
-.content.sale .input-lc:focus::-moz-placeholder, .content.sale .input-lc:hover::-moz-placeholder {
-  color: #FF1919;
-}
-.content.sale .input-lc:focus:-ms-input-placeholder, .content.sale .input-lc:hover:-ms-input-placeholder {
-  color: #FF1919;
-}
-.content.sale .input-lc:focus::placeholder, .content.sale .input-lc:hover::placeholder {
-  color: #FF1919;
-}
-.content.sale .input-lc:focus, .content.sale .input-lc:hover {
-  border: 1px solid #FF1919;
-}
-.content.sale .input-lc.return {
-  transform: skewX(-15deg);
-  font-style: normal;
-}
 .content.sale .img-container {
   position: relative;
   border: 1px solid #C00000;
@@ -10315,6 +10281,41 @@ footer .footer-social li:hover a {
 }
 .btn-lc:hover::after {
   right: -1px;
+}
+
+.input-lc {
+  margin-bottom: 4px;
+  border: 1px solid #C00000;
+  background-color: #090909;
+  color: #ffffff;
+  min-height: 40px;
+  transform: skewX(15deg);
+  font-style: italic;
+}
+.input-lc::-moz-placeholder {
+  color: #740000;
+}
+.input-lc:-ms-input-placeholder {
+  color: #740000;
+}
+.input-lc::placeholder {
+  color: #740000;
+}
+.input-lc:focus::-moz-placeholder, .input-lc:hover::-moz-placeholder {
+  color: #FF1919;
+}
+.input-lc:focus:-ms-input-placeholder, .input-lc:hover:-ms-input-placeholder {
+  color: #FF1919;
+}
+.input-lc:focus::placeholder, .input-lc:hover::placeholder {
+  color: #FF1919;
+}
+.input-lc:focus, .input-lc:hover {
+  border: 1px solid #FF1919;
+}
+.input-lc.return {
+  transform: skewX(-15deg);
+  font-style: normal;
 }
 
 section.title {

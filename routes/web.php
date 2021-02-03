@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\BackOfficeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,17 +15,23 @@ use App\Http\Controllers\CartController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//HOME
 Route::get('/', [HomeController::class, 'view'])->name('home');
-
+//PRODUCT
 Route::get('/products', [ProductController::class, 'product_list'])->name('produits');
 Route::get('/products/sortByName', [ProductController::class, 'product_list_sortByName'])->name('produitsByName');
 Route::get('/products/sortByPrice', [ProductController::class, 'product_list_sortByPrice'])->name('produitsByPrice');
-
+//VENDRE
 Route::get('/sale', [ProductController::class, 'create'])->name('formulaire');
 Route::post('/sale', [ProductController::class, 'store'])->name('validation');
-
+//PRODUCT SELF
 Route::get('/product/{id}', [ProductController::class, 'product_details'])->name('product-self');
-
+//PANIER
 Route::get('/cart', [CartController::class, 'view'])->name('panier');
+//BACKOFFICE
+Route::get('/backoffice/', [BackOfficeController::class, 'show'])->name('backoffice');
+Route::get('/backoffice/new', [BackOfficeController::class, 'create'])->name('backCreate');
+Route::post('/backoffice/add', [BackOfficeController::class, 'addProduct'])->name('addForm');
+Route::get('/backoffice/modif/{id}', [BackOfficeController::class, 'update'])->name('backUpdate');
+Route::get('/backoffice/{id}', [BackOfficeController::class, 'delete'])->name('backDelete');
 

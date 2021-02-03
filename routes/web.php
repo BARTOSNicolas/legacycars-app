@@ -22,7 +22,7 @@ Route::get('/product', [ProductController::class, 'product_list'])->name('produi
 Route::get('/sale', [ProductController::class, 'create'])->name('formulaire');
 Route::post('/sale', [ProductController::class, 'store'])->name('validation');
 
-Route::get('/product/{id}', [ProductController::class, 'product_details']);
+Route::get('/product/{id}', [ProductController::class, 'product_details'])->name('product-self');
 
 Route::get('/cart', [CartController::class, 'view'])->name('panier');
 

@@ -10010,6 +10010,46 @@ h1 {
   color: red;
 }
 
+.product-list .card {
+  margin-bottom: 16px;
+  background-color: #000000;
+}
+.product-list .card .card-body {
+  background-color: #090909;
+  border: 1px solid #C00000;
+  border-radius: 4px;
+}
+.product-list .card .card-body .card-content .card-img-top {
+  min-height: 250px;
+  min-width: 100%;
+  border: 1px solid #C00000;
+  background-color: #fff;
+  margin-bottom: 8px;
+}
+.product-list .card .card-body .card-content .card-title {
+  color: #C00000;
+}
+.product-list .card .card-body .card-content .card-text {
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+.product-self .self-img {
+  border: 1px solid #C00000;
+  min-width: 100%;
+  min-height: 400px;
+  background-color: #fff;
+  margin-bottom: 8px;
+}
+.product-self .self-text {
+  color: #ffffff;
+}
+.product-self .self-detail {
+  color: #ffffff;
+}
+.product-self .self-btn {
+  width: 100%;
+}
+
 .title.sale {
   background-image: url(/images/vendre-background.jpg?1349989939a9b781844e306ee9791b13);
 }

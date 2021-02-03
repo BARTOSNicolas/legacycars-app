@@ -1,0 +1,33 @@
+.product-list{
+    .card{
+        margin-bottom: 16px;
+        background-color: $lc-black;
+
+        .card-body{
+            background-color: $lc-grey;
+            border: 1px solid $lc-primary;
+            border-radius: 4px;
+            .card-content{
+                .card-img-top{
+                    min-height: 250px;
+                    min-width: 100%;
+                    border: 1px solid $lc-primary;
+                    background-color: #fff;
+                    margin-bottom: 8px;
+                }
+                .card-title{
+                    color: $lc-primary;
+                }
+                .card-text{
+                    color: $lc-white;
+                    margin-bottom: 16px;
+                }
+            }
+
+            .card-btn{
+
+            }
+
+        }
+    }
+}

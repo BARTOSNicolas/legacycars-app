@@ -19,7 +19,7 @@ Route::get('/', [HomeController::class, 'view'])->name('home');
 
 Route::get('/product', [ProductController::class, 'product_list'])->name('produits');
 
-Route::get('/sale', [ProductController::class, 'product_sell'])->name('formulaire');
+Route::get('/sale', [ProductController::class, 'create'])->name('formulaire');
 Route::post('/sale', [ProductController::class, 'store'])->name('validation');
 
 Route::get('/product/{id}', [ProductController::class, 'product_details']);

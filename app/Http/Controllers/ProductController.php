@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function product_details($id){
         return view('product-details', ['id' => $id]);
     }
-    public function product_sell(){
+    public function create(){
         return view('product-sell');
     }
     public function store(Request $request){

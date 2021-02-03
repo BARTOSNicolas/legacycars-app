@@ -60,6 +60,6 @@
         </div>
     </section>
     @if(Request::isMethod('post'))
-        <p>{{$form['first_name']}}, {{$form['last_name']}}, {{$form['mail']}}, {{$form['phone']}}, {{$form['marque']}}, {{$form['modele']}}, {{$form['annee']}}, {{$form['kilometrage']}}, {{$form['prix']}}, </p>
+        <p class="text-light">{{$form['first_name']}}, {{$form['last_name']}}, {{$form['mail']}}, {{$form['phone']}}, {{$form['marque']}}, {{$form['model']}}, {{$form['annee']}}, {{$form['kilometrage']}}, {{$form['prix']}}</p>
     @endif
 @endsection

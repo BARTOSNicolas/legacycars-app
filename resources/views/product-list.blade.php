@@ -1,6 +1,11 @@
 @extends('layout')
 
 @section('content')
+    <section class="title list">
+        <div class="container">
+            <h1 class="page-title">Acheter une voiture</h1>
+        </div>
+    </section>
     <div class="product-list container">
         <h1>Liste des produits</h1>
         <div class="d-flex mb-4">
@@ -8,16 +13,17 @@
             <a href="{{ route('produitsByPrice') }}" class="card-btn btn btn-lc">Trier par prix</a>
         </div>
         <div class="row">
-        @foreach($products as $product)
+        @foreach($cars as $car)
                 <div class="card col-sm-4">
                     <div class="card-body d-flex flex-column justify-content-between">
                         <div class="card-content">
-                            <img src="..." class="card-img-top" alt="...">
-                            <h5 class="card-title">{{ $product->name }}</h5>
-                            <p class="card-text">{{ $product->description }}<br>Prix : {{ $product->price }}€</p>
+                            <div class="card-img-top"><img src="{{ asset('img/products/'.$car->picture) }}"  alt="..."></div>
+                            <h5 class="card-title">{{ $car->marque }} - {{ $car->model }}</h5>
+                            <p class="card-text">{{ $car->description }}</p>
+                            <p class="card-price">Prix : {{ $car->prix }}€</p>
 
                         </div>
-                        <a href="{{ route('product-self',$product->id) }}" class="card-btn btn btn-lc">Acheter</a>
+                        <a href="{{ route('product-self',$car->id) }}" class="card-btn btn btn-lc">Acheter</a>
                     </div>
                 </div>
         @endforeach

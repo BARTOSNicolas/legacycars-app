@@ -4,48 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Product;
+use App\Models\Car;
 
 class ProductController extends Controller
 {
+    //Voir la liste des voitures
     public function product_list(){
-        //$products = DB::select('SELECT * FROM products');
-        $products = Product::all();
-        return view('product-list', ['products'=>$products]);
+        $cars = Car::all();
+        return view('product-list', ['cars'=>$cars]);
     }
+    //Voir la liste des voitures par marque
     public function product_list_sortByName(){
-        //$products = DB::select('SELECT * FROM products');
-        $products = Product::all()->sortBy('name');
-        return view('product-list', ['products'=>$products]);
+        $cars = Car::all()->sortBy('marque');
+        return view('product-list', ['cars'=>$cars]);
     }
+    //Voir la liste des voiture par prix
     public function product_list_sortByPrice(){
-        //$products = DB::select('SELECT * FROM products');
-        $products = Product::all()->sortBy('price');
-        return view('product-list', ['products'=>$products]);
+        $cars = Car::all()->sortBy('prix');
+        return view('product-list', ['cars'=>$cars]);
     }
-
+    //Affiche la page avec une voiture
     public function product_details($id){
-       //$product = DB::select('SELECT * FROM products WHERE id=?', [$id]);
-        $product = Product::find($id);
-        return view('product-details', ['id' => $id, 'product' => $product]);
+        $car = Car::find($id);
+        return view('product-details', ['id' => $id, 'car' => $car]);
     }
+    //Envoi vers la page d'ajout de véhicule
     public function create(){
         return view('product-sell');
-    }
-    public function store(Request $request){
-        $data = [
-            'form' => [
-                'first_name' => $request->input('first_name'),
-                'last_name' => $request->input('last_name'),
-                'mail' => $request->input('mail'),
-                'phone' => $request->input('phone'),
-                'marque' => $request->input('marque'),
-                'model' => $request->input('model'),
-                'annee' => $request->input('annee'),
-                'kilometrage' => $request->input('kilometrage'),
-                'prix' => $request->input('prix'),
-            ]
-        ];
-        return view('product-sell', $data);
     }
 }

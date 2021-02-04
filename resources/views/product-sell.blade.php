@@ -29,12 +29,13 @@
                     <h2 class="subtilte">Voiture</h2>
                     <div class=" d-flex flex-column">
                         <input type="text" class="form-control mb-2 input-lc" placeholder="Marque" name="marque">
-                        <input type="text" class="form-control mb-2 input-lc return" placeholder="Modèle" name="modele">
-                        <input type="text" class="form-control mb-2 input-lc" placeholder="Année" name="annee">
-                        <input type="text" class="form-control mb-2 input-lc return" placeholder="kilométrage" name="kilometrage">
-                        <input type="text" class="form-control mb-2 input-lc" placeholder="prix" name="prix">
-                        <input class="form-control mb-2 input-lc return" type="file" id="photoMultiple" multiple>
-                        <textarea class="form-control input-lc ml-2 mb-2" id="message" name="message" rows="4" placeholder="Description"></textarea>
+                        <input type="text" class="form-control mb-2 input-lc return" placeholder="Modèle" name="model">
+                        <input type="number" class="form-control mb-2 input-lc" placeholder="Année" name="year">
+                        <input type="number" class="form-control mb-2 input-lc return" placeholder="kilométrage" name="km">
+                        <input type="number" class="form-control mb-2 input-lc" placeholder="prix" name="prix">
+                        <input type="text" class="form-control mb-2 input-lc return" placeholder="image.jpg" name="picture">
+{{--                        <input class="form-control mb-2 input-lc return" type="file" id="photoMultiple" multiple>--}}
+                        <textarea class="form-control input-lc ml-2 mb-2" id="message" name="description" rows="4" placeholder="Description"></textarea>
                     </div>
                     <button type="submit" class="btn btn-lc w-100 ml-3">Envoyer</button>
                 </form>

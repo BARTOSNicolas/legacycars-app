@@ -1,3 +1,6 @@
+.title.list{
+    background-image: url(../../public/img/achat-background.jpg);
+}
 .product-list{
     .card{
         margin-bottom: 16px;
@@ -9,17 +12,34 @@
             border-radius: 4px;
             .card-content{
                 .card-img-top{
-                    min-height: 250px;
-                    min-width: 100%;
+                    position: relative;
+                    overflow: hidden;
+                    height: 220px;
+                    width: 100%;
                     border: 1px solid $lc-primary;
-                    background-color: #fff;
                     margin-bottom: 8px;
+                    &:hover img{
+                        width: 120%;
+                        top: -15px;
+                        left: -15px;
+                    }
+                    img{
+                        position: absolute;
+                        top: -5px;
+                        left: -5px;
+                        width: 110%;
+                        transition: 250ms;
+                    }
                 }
                 .card-title{
                     color: $lc-primary;
                 }
                 .card-text{
                     color: $lc-white;
+
+                }
+                .card-price{
+                    color: $lc-primary;
                     margin-bottom: 16px;
                 }
             }

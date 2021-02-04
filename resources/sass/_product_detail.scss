@@ -1,17 +1,20 @@
 .product-self{
     .self-img{
         border: 1px solid $lc-primary;
-        min-width: 100%;
-        min-height: 400px;
-        background-color: #fff;
+        min-height: 200px;
         margin-bottom: 8px;
+        overflow: hidden;
+        padding: 0;
+        margin-bottom: 48px;
+        img{
+            width: 100%;
+        }
+
     }
     .self-text{
         color: $lc-white;
     }
-    .self-detail{
-        color: $lc-white;
-    }
+
     .self-btn{
         width: 100%;
     }

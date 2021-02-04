@@ -10004,10 +10004,12 @@ h3 {
     border-color: #dee2e6;
   }
 }
-h1 {
-  font-family: "Faster One", cursive;
-  font-size: 32px;
-  color: red;
+.title.home {
+  background-image: url(/images/home-background.jpg?635c329a1f11560eecf0343da02e5c1f);
+}
+
+.title.list {
+  background-image: url(/images/achat-background.jpg?3ef3d22d640ae81b31f7621128a3f74f);
 }
 
 .product-list .card {
@@ -10020,30 +10022,47 @@ h1 {
   border-radius: 4px;
 }
 .product-list .card .card-body .card-content .card-img-top {
-  min-height: 250px;
-  min-width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 220px;
+  width: 100%;
   border: 1px solid #C00000;
-  background-color: #fff;
   margin-bottom: 8px;
+}
+.product-list .card .card-body .card-content .card-img-top:hover img {
+  width: 120%;
+  top: -15px;
+  left: -15px;
+}
+.product-list .card .card-body .card-content .card-img-top img {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 110%;
+  transition: 250ms;
 }
 .product-list .card .card-body .card-content .card-title {
   color: #C00000;
 }
 .product-list .card .card-body .card-content .card-text {
   color: #ffffff;
+}
+.product-list .card .card-body .card-content .card-price {
+  color: #C00000;
   margin-bottom: 16px;
 }
 .product-self .self-img {
   border: 1px solid #C00000;
-  min-width: 100%;
-  min-height: 400px;
-  background-color: #fff;
+  min-height: 200px;
   margin-bottom: 8px;
+  overflow: hidden;
+  padding: 0;
+  margin-bottom: 48px;
+}
+.product-self .self-img img {
+  width: 100%;
 }
 .product-self .self-text {
-  color: #ffffff;
-}
-.product-self .self-detail {
   color: #ffffff;
 }
 .product-self .self-btn {
@@ -10084,6 +10103,13 @@ h1 {
 .content.sale .img-container .close-icon svg {
   width: 18px;
   height: 18px;
+}
+
+.result {
+  text-align: center;
+  color: #ffffff;
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 
 .navbar {
@@ -10333,6 +10359,12 @@ section.title .container .page-title {
   left: 0;
   font-size: 48px;
   color: #C00000;
+}
+
+h1 {
+  font-family: "Faster One", cursive;
+  font-size: 32px;
+  color: red;
 }
 
 section.content {

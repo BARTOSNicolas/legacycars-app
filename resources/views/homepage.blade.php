@@ -1,5 +1,9 @@
 @extends('layout')
 
 @section('content')
-<h1>HelloWorld From Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})</h1>
+    <section class="title home">
+        <div class="container">
+            <h1 class="page-title">HomePage</h1>
+        </div>
+    </section>
 @endsection

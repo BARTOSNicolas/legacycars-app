@@ -24,12 +24,12 @@ class ProductController extends Controller
         return view('product-list', ['cars'=>$cars]);
     }
     //Affiche la page avec une voiture
-    public function product_details($id){
-        $car = Car::find($id);
-        return view('product-details', ['id' => $id, 'car' => $car]);
+    public function product_details(Car $car){
+        $vendeur = Car::find($car->id)->vendeur;
+        return view('product-details', ['car' => $car, 'vendeur' => $vendeur]);
     }
     //Envoi vers la page d'ajout de véhicule
-    public function create(){
+    public function sell_car(){
         return view('product-sell');
     }
 }

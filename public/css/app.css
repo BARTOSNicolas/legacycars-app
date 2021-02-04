@@ -10112,6 +10112,10 @@ h3 {
   padding-bottom: 64px;
 }
 
+.table caption {
+  caption-side: top;
+}
+
 .navbar {
   z-index: 99;
   background-color: #000000;

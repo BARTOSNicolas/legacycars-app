@@ -7,7 +7,7 @@
         </div>
     </section>
     <div class="product-list container">
-        <h1>Liste des produits</h1>
+        <h2>Liste des produits</h2>
         <div class="d-flex mb-4">
             <a href="{{ route('produitsByName') }}" class="card-btn btn btn-lc mr-5">Trier par nom</a>
             <a href="{{ route('produitsByPrice') }}" class="card-btn btn btn-lc">Trier par prix</a>

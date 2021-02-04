@@ -9,4 +9,9 @@ class Seller extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    //Relation One to Many
+    public function voitures(){
+        return $this->hasMany(Car::class, 'seller_id', 'id');
+    }
 }

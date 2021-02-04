@@ -3,5 +3,10 @@
     color: $lc-white;
     padding-top: 64px;
     padding-bottom: 64px;
+}
+.table{
+    caption{
+        caption-side: top;
+    }
 
 }

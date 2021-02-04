@@ -24,18 +24,18 @@ Route::get('/products/sortByName', [ProductController::class, 'product_list_sort
 Route::get('/products/sortByPrice', [ProductController::class, 'product_list_sortByPrice'])->name('produitsByPrice');
 
 //VENDRE
-Route::get('/vendresavoiture', [ProductController::class, 'create'])->name('formulaire');
+Route::get('/vendresavoiture', [ProductController::class, 'sell_car'])->name('formulaire');
 
 //PRODUCT SELF
-Route::get('/product/{id}', [ProductController::class, 'product_details'])->name('product-self');
+Route::get('/product/{car}', [ProductController::class, 'product_details'])->name('product-self');
 
 //PANIER
 Route::get('/cart', [CartController::class, 'view'])->name('panier');
 
 //BACKOFFICE
-Route::get('/backoffice/', [BackOfficeController::class, 'show'])->name('backoffice');
+Route::get('/backoffice/', [BackOfficeController::class, 'index'])->name('backoffice');
 Route::post('/vendresavoiture', [BackOfficeController::class, 'addCar'])->name('validation');
-Route::get('/backoffice/update/{id}', [BackOfficeController::class, 'update'])->name('backUpdate');
-Route::post('/backoffice/updated/{id}', [BackOfficeController::class, 'updated_car'])->name('backUpdated');
-Route::get('/backoffice/delete/{id}', [BackOfficeController::class, 'delete'])->name('backDelete');
+Route::get('/backoffice/update/{car}', [BackOfficeController::class, 'update'])->name('backUpdate');
+Route::post('/backoffice/updated/{car}', [BackOfficeController::class, 'updated_car'])->name('backUpdated');
+Route::get('/backoffice/delete/{car}', [BackOfficeController::class, 'delete'])->name('backDelete');
 

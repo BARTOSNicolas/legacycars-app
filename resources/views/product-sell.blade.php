@@ -38,6 +38,13 @@
                         <textarea class="form-control input-lc ml-2 mb-2" id="message" name="description" rows="4" placeholder="Description"></textarea>
                     </div>
                     <button type="submit" class="btn btn-lc w-100 ml-3">Envoyer</button>
+                    <div class="text-center col-sm-4 offset-4">
+                        @if(session('error'))
+                            <div class="alert alert-success">
+                                {{ session('error') }}
+                            </div>
+                        @endif
+                    </div>
                 </form>
             </div>
             <div class="col-sm-4">

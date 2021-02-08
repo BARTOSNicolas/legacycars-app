@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="container">
-        <form action="{{ route('backUpdated', $car->id)}}" method="POST" class="row">
+        <form action="{{ route('backUpdated', $car)}}" method="POST" class="row">
+            @method('PUT')
             {{ csrf_field() }}
             <div class="col-sm-4">
                 <input type="text" class="form-control mb-2 input-lc" placeholder="marque" name="marque" value="{{$car->marque}}">
@@ -17,5 +18,14 @@
                 <button type="submit" class="btn btn-lc w-100 ml-2">Envoyer</button>
             </div>
         </form>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
 @endsection

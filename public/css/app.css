@@ -10352,6 +10352,7 @@ section.title {
   height: 600px;
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 section.title .container {
   position: relative;

@@ -36,6 +36,6 @@ Route::get('/cart', [CartController::class, 'view'])->name('panier');
 Route::get('/backoffice/', [BackOfficeController::class, 'index'])->name('backoffice');
 Route::post('/vendresavoiture', [BackOfficeController::class, 'addCar'])->name('validation');
 Route::get('/backoffice/update/{car}', [BackOfficeController::class, 'update'])->name('backUpdate');
-Route::post('/backoffice/updated/{car}', [BackOfficeController::class, 'updated_car'])->name('backUpdated');
-Route::get('/backoffice/delete/{car}', [BackOfficeController::class, 'delete'])->name('backDelete');
+Route::put('/backoffice/updated/{car}', [BackOfficeController::class, 'updated_car'])->name('backUpdated');
+Route::delete('/backoffice/delete/{car}', [BackOfficeController::class, 'delete'])->name('backDelete');
 

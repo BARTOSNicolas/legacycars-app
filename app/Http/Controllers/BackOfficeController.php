@@ -20,6 +20,21 @@ class BackOfficeController extends Controller
     public function addCar(Request $request)
     {
         try {
+            $validated = $request->validate([
+                'first_name' => 'required',
+                'last_name' => 'required',
+                'mail' => 'required|Email',
+                'phone' => 'required',
+
+                'marque' => 'required',
+                'model' => 'required',
+                'year' => 'required',
+                'km' => 'required|min:1',
+                'prix' => 'required|min:1',
+                'picture' => 'required',
+                'description' => 'required',
+            ]);
+
             $car = new Car;
             $seller = new Seller;
 
@@ -43,10 +58,10 @@ class BackOfficeController extends Controller
 
             $message_error = "Cest bon ta voiture est sur le site";
             return redirect()->route('product-self', $car->id)->with('status', 'Création reussie');
-//            return view('backoffice-result', ['message_error' => $message_error, 'help' => 'created']);
+
         } catch (Exception $e) {
             $message_error = 'Oups, il y a eu un incident !!';
-//            return view('backoffice-result', ['message_error' => $message_error, 'help' => 'created']);
+
             return redirect('formulaire')->with('error', 'echec de la création');
         }
 
@@ -62,28 +77,17 @@ class BackOfficeController extends Controller
     public function updated_car(Car $car, Request $request)
     {
         try {
+            $validated = $request->validate([
+                'marque' => 'required',
+                'model' => 'required',
+                'year' => 'required',
+                'km' => 'required|min:1',
+                'prix' => 'required|min:1',
+                'picture' => 'required',
+                'description' => 'required',
+            ]);
+
             $car->update($request->all());
-//            if ($request->filled('marque')) {
-//                $car->marque = $request->input('marque');
-//            }
-//            if ($request->filled('model')) {
-//                $car->model = $request->input('model');
-//            }
-//            if ($request->filled('year')) {
-//                $car->year = $request->input('year');
-//            }
-//            if ($request->filled('km')) {
-//                $car->km = $request->input('km');
-//            }
-//            if ($request->filled('prix')) {
-//                $car->prix = $request->input('prix');
-//            }
-//            if ($request->filled('picture')) {
-//                $car->picture = $request->input('picture');
-//            }
-//            if ($request->filled('description')) {
-//                $car->description = $request->input('description');
-//            }
 
             $car->save();
 

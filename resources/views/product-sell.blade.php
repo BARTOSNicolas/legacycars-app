@@ -39,9 +39,13 @@
                     </div>
                     <button type="submit" class="btn btn-lc w-100 ml-3">Envoyer</button>
                     <div class="text-center col-sm-4 offset-4">
-                        @if(session('error'))
-                            <div class="alert alert-success">
-                                {{ session('error') }}
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
                             </div>
                         @endif
                     </div>

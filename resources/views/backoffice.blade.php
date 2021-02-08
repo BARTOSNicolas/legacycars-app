@@ -30,8 +30,14 @@
         <tr>
             <th scope="row">{{ $loop->iteration }}</th>
             <td>{{ $car->marque }} - {{ $car->model }}</td>
-            <td><a href="{{ route('backUpdate',$car->id) }}" class="self-btn btn btn-lc">Modifier le produit</a></td>
-            <td><a href="{{ route('backDelete',$car->id) }}" class="self-btn btn btn-lc">Supprimer le produit</a></td>
+            <td><a href="{{ route('backUpdate',$car->id) }}" class="self-btn btn btn-lc w-100">Modifier le produit</a></td>
+            <td>
+                <form action="{{ route('backDelete',$car->id) }}" method="POST">
+                    @method('DELETE')
+                    {{ csrf_field() }}
+                    <button class="self-btn btn btn-lc w-100" type="submit">Supprimer</button>
+                </form>
+            </td>
         </tr>
         @endforeach
         </tbody>
